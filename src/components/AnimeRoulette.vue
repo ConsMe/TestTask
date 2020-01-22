@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { TimelineLite } from 'gsap';
+import gsap from 'gsap';
 
 export default {
   data() {
@@ -56,7 +56,7 @@ export default {
           time: this.round * i + (this.width / 2 + this.border + this.margin),
         };
       });
-      this.timeline = new TimelineLite();
+      this.timeline = gsap.timeline();
       this.timeline.to(this.$refs.container, this.duration, {
         x: -this.translate,
         onUpdate: function onUpdate() {
